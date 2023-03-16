@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            //CAMERAPIC
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/man1" />
+
+            <LinearLayout
+                android:id="@+id/campicLL"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/image_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                //CAMERA BUTTON
+
+                <Button
+                    android:id="@+id/img_pick_btn"
+                    style="@style/Base.Widget.AppCompat.Button.Colored"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="Choose Image" />
+
+                <Button
+                    android:id="@+id/btn_camera"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="Open Camera"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_viewer" />
+            </LinearLayout>
+
+
+            //NAME
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/campicLL"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="35dp"
+                tools:ignore="NotSibling">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    android:inputType="textPersonName"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //AGE
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/AgeContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameContainer"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp"
+                app:helperTextTextColor="@android:color/holo_red_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ageEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/age"
+                    android:inputType="number"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //DOB
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edittextstyle"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="15dp">
+
+                <Button
+                    android:id="@+id/pickDateBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:icon="@drawable/ic_calendar_month" />
+                <!--                style="Widget.MaterialComponents.Button.TextButton.Icon"-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/datetv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center"
+                    android:text="DD/MM/YEAR"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+
+                        android:id="@+id/etDobmm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="DD/MM/YEAR"
+                        android:lines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            //EMAIL
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dobContainer"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp"
+                app:helperTextTextColor="@android:color/holo_red_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //NUMBER
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/numberContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emailContainer"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:helperTextTextColor="@android:color/holo_red_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:startIconDrawable="@drawable/ic_phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/numberEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/number"
+                    android:inputType="number"
+                    android:maxLength="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //ADDRESS
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addressContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/numberContainer"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp"
+                app:helperTextTextColor="@android:color/holo_red_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/address"
+                    android:inputType="textEmailAddress"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //BLOODGROUP
+
+            <Spinner
+                android:id="@+id/sp_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp"
+                android:autofillHints="Select"
+                android:textAlignment="center" />
+
+            //BUTTON
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bloodContainer"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Submit"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
